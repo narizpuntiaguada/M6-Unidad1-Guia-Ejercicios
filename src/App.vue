@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container py-5">
+      <div class="d-flex justify-content-between">
+        <p> Fecha: <span> {{ fecha }}</span></p>
+        <p>Lugar: <span> {{ lugar }}</span></p>
+      </div>
+      <p>En el siguiente contrato se estipula el acuerdo entre <span>{{
+        arrendatario }}</span> en su rol de arrendador y <span>{{ arrendatario
+          }}</span> como el arrendatario. </p>
+      <p>Con fecha de <span>{{ fecha }}</span></p>
+      <p>Se acuerda el valor mensual de <span>{{ valorMensual }}</span></p>
+    </div>
+    <hr class="border border-danger border-2">
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      arrendador: "Elon Musk",
+      arrendatario: "Jeff Bezos",
+      fecha: "25/09/2025",
+      lugar: "Temuco",
+      valorMensual: 1600000,
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style  scope>
+span { 
+  font-weight: bold; 
+  text-decoration: underline;
+   }
 </style>
